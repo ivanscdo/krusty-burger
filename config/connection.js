@@ -13,7 +13,8 @@ connection.connect(function(error) {
         return;
     }
 
-    console.log("connected as id: " + connection.threadId);
+    console.log("connection.js: connected as id " + connection.threadId + "\n");
 });
 
-module.exports.connection = connection;
+// module.exports.connection = connection;
+module.exports = connection;
