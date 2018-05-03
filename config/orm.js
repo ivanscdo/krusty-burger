@@ -29,7 +29,7 @@ module.exports = ORM;
 
 
 
-// // // TEST: 1, before class15.1 
+// // // TEST: 1, before 15.1 
 // // module.exports obj style - module.exports obj style - module.exports obj style -
 // // module.exports = {
 // //     selectAll : function() {

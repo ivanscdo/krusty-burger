@@ -30,7 +30,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
 module.exports = router;
 
-// // // TEST: 1, before class15.1 
+// // // TEST: 1, before 15.1 
 // router.get("/", (req, res) => {
 //     console.log("router.get('/'): homepage");
 

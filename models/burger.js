@@ -21,7 +21,7 @@ module.exports = burger;
 
 
 
-// // // TEST: before class15.1 
+// // // TEST: before 15.1 
 // TEST: testing connections
 // ORM.selectAll();
 // ORM.insertOne();
