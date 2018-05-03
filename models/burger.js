@@ -2,6 +2,26 @@
 
 let ORM = require("../config/orm");
 
+var burger = {
+    all: function(cb) {
+        ORM.selectAll("burgers", function(res) {
+            cb(res);
+        });
+    },
+    create: function() {
+
+    }, 
+    update: function() {
+
+    } 
+};
+
+module.exports = burger; 
+
+
+
+
+// // // TEST: before class15.1 
 // TEST: testing connections
 // ORM.selectAll();
 // ORM.insertOne();
@@ -21,6 +41,6 @@ let ORM = require("../config/orm");
 //     return ORM.selectAll;
 // }
 // module.exports.callbackTest = callbackTest;
+// module.exports.selectAll = ORM.selectAll;
 
 
-module.exports.selectAll = ORM.selectAll;
