@@ -56,7 +56,7 @@ const connection = require("./connection");
 function selectAll() {
 // function selectAll(req, res) {
     
-
+    // // // attempt 1
     // connection.query("SELECT * FROM burgers", function(error, data) {
     //     if (error) {
     //         return res.status(500).end();
@@ -66,6 +66,8 @@ function selectAll() {
     //     return data;
     //     // res.render(data)
     // });
+
+    // // // attempt 2
     connection.query("SELECT * FROM burgers", function(err, data) {
         if (err) {
               return res.status(500).end();
@@ -73,9 +75,20 @@ function selectAll() {
         console.log("orm.js: ", data);
         // res.render("index", {burgers: data});
         return data;
-  });
+    });
   console.log("calling func: selectAll()");
-  
+
+    // // // TEST: promises 
+    // connection.query("SELECT * FROM burgers").then(data => {
+    //     console.log("inside .then()");
+    //     return data;
+    // })
+    // console.log("calling func: selectAll()");
+    
+
+
+
+//END OF: function selectAll() {
 }
 
 

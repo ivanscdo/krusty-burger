@@ -1,7 +1,7 @@
 var express    = require("express"), 
       bodyParser = require("body-parser"),
       // exphbs     = require("express-handlebars");
-      burgerController = require("./controllers/burgers_controller");
+      burger_controller = require("./controllers/burgers_controller");
       // connection = require("./config/connection");
 
 var app = express();
@@ -17,7 +17,7 @@ app.engine("handlebars", exphbs({defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // // // using express.Router in connection.js
-app.use(burgerController);
+app.use(burger_controller);
 // // // using app.get in server.js
 // app.get("/", function(req, res){
 //       connection.query("SELECT * FROM burgers", function(err, data) {
