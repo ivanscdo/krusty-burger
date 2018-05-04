@@ -5,13 +5,15 @@ let burger = require("../models/burger");
 
 // 4. Create the `router` for the app, and export the `router` at the end of your file.
 router.get("/", function (req, res) {
-    burger.all(function(data){
-        var hbObject = {
-            burgers: data
-        };
-        console.log(hbObject);
-        res.render("index", hbObject);
-    });
+    burger.all(
+        function(data){
+            var hbObject = {
+                burgers: data
+            };
+            console.log(hbObject);
+            res.render("index", hbObject);
+        }
+    );
 });
 
 router.post("/api/burgers", function(req, res) {
@@ -25,7 +27,23 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-    burger.update();
+    var condition = "id = " + req.params.id;
+
+    console.log("condition:", condition);
+
+    console.log("req.body:", req.body);
+
+    burger.update(
+        {devoured: req.body.devoured},
+        condition,
+        function(result) {
+            if (result.changedRows == 0) {
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            }
+        }
+    );
 
 });
 

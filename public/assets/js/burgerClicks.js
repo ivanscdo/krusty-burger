@@ -17,4 +17,26 @@ $(function() {
             }
         );
     });
+
+    $(".devour-burger").on("click", function(event) {
+        var id = $(this).data("id");
+        var devourData = $(this).data("devour"); 
+
+        var burgerDevoured = {
+            devoured: devourData
+        }
+
+        console.log(burgerDevoured);
+        $.ajax("/api/burgers/" + id, {
+            type:"PUT", 
+            data: burgerDevoured
+        }).then(
+            function() {
+                console.log("devoured burger!");
+
+                location.reload();
+            }
+        );
+    });
+
 });
