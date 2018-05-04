@@ -1,5 +1,7 @@
 <h1>Krusty Burger</h1>
 
+<h2>Ready to Eat!</h2>
+
 <ul>
     {{#each burgers}}
     <li>
@@ -10,3 +12,15 @@
     {{/each}}
 </ul>
 
+<h2>Add a burger!</h2>
+
+<form class="adda-burger">
+
+    <div class="form-group">
+        <label for="burger-name">Burger Name:</label>
+        <input type="text" id="burger-name" name="name">
+        <button type="submit">Add Burger</button>
+    </div>
+    
+    
+</form>
